@@ -1,0 +1,137 @@
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #7dd3fc;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --max-width: 960px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#061226 0%, #07132a 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding:32px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+
+.site-header{
+  margin-bottom:20px;
+  text-align:left;
+}
+
+.site-title{
+  margin:0;
+  font-size:2rem;
+  letter-spacing:-0.02em;
+  color:var(--accent);
+}
+
+.site-subtitle{
+  margin:6px 0 0 0;
+  color:var(--muted);
+}
+
+.intro{
+  margin:0 0 18px 0;
+  color:var(--muted);
+}
+
+/* Sections grid */
+.sections-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+
+/* Details / summary styles */
+.section-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.03);
+  transition:transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 2px 10px rgba(2,6,23,0.6);
+}
+
+.section-card[open]{
+  transform:translateY(-4px);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+}
+
+/* Remove native marker and style summary */
+.section-card summary{
+  list-style:none;
+  cursor:pointer;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  user-select:none;
+  outline:none;
+}
+.section-card summary::-webkit-details-marker{ display:none; }
+
+/* caret */
+.section-card summary::after{
+  content: "▸";
+  margin-left:auto;
+  color:var(--muted);
+  transform-origin:center;
+  transition:transform .18s ease, color .18s ease;
+}
+.section-card[open] summary::after{ transform:rotate(90deg); color:var(--accent); }
+
+/* summary content */
+.summary-left{display:block}
+.section-title{
+  margin:0;
+  font-size:1.05rem;
+  color:#e6f9ff;
+}
+.section-context{
+  margin:6px 0 0 0;
+  color:var(--muted);
+  font-size:0.92rem;
+}
+
+/* full content */
+.section-content{
+  padding:0 18px 18px 18px;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.02);
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+.section-content p{ margin:12px 0 0 0; }
+.section-content ul{ margin:8px 0 0 20px; color:var(--muted) }
+
+/* Footer */
+.site-footer{
+  margin-top:28px;
+  color:var(--muted);
+  font-size:0.9rem;
+  width:100%;
+  max-width:var(--max-width);
+  text-align:left;
+}
+/* responsive tweaks */
+@media (max-width:520px){
+  .site-title{ font-size:1.5rem; }
+  .site-subtitle{ font-size:0.95rem; }
+}

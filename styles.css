@@ -715,14 +715,6 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .project-detail {
-        grid-template-columns: 1fr;
-    }
-
-    .project-detail:nth-child(even) .project-img {
-        order: 1;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
     }

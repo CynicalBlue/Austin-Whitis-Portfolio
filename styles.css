@@ -385,14 +385,6 @@ a:hover {
     box-shadow: 0 4px 15px var(--shadow);
 }
 
-.project-detail:nth-child(even) {
-    grid-template-columns: 1fr 1fr;
-}
-
-.project-detail:nth-child(even) .project-img {
-    order: 2;
-}
-
 .project-img {
     width: 100%;
     height: 350px;

@@ -375,6 +375,15 @@ a:hover {
     background-color: var(--white);
 }
 
+.portfolio-section .project-img {
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
 .project-detail {
     margin-bottom: 5rem;
     display: flex;

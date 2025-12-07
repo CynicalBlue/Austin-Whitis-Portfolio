@@ -252,6 +252,7 @@ a:hover {
 .project-img {
     width: 100%;
     height: auto;
+    object-fit: contain;
     border-radius: 8px;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
